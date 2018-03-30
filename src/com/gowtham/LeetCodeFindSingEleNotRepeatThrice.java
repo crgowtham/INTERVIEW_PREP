@@ -1,4 +1,4 @@
-package com.gowtham.leetcode;
+package com.gowtham;
 
 public class LeetCodeFindSingEleNotRepeatThrice {
 

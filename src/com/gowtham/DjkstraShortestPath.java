@@ -80,6 +80,42 @@ public class DjkstraShortestPath {
 		}
 	}
 
+	/*
+	 * public static Graph calculateShortestPathFromSource(Graph graph, Node
+	 * source) {
+	 * 
+	 * source.setDistance(0);
+	 * 
+	 * Set<Node> settledNodes = new HashSet<>(); Set<Node> unsettledNodes = new
+	 * HashSet<>(); unsettledNodes.add(source);
+	 * 
+	 * while (unsettledNodes.size() != 0) { Node currentNode =
+	 * getLowestDistanceNode(unsettledNodes);
+	 * unsettledNodes.remove(currentNode); for (Entry<Node, Integer>
+	 * adjacencyPair : currentNode.getAdjacentNodes().entrySet()) { Node
+	 * adjacentNode = adjacencyPair.getKey(); Integer edgeWeigh =
+	 * adjacencyPair.getValue();
+	 * 
+	 * if (!settledNodes.contains(adjacentNode)) {
+	 * CalculateMinimumDistance(adjacentNode, edgeWeigh, currentNode);
+	 * unsettledNodes.add(adjacentNode); } } settledNodes.add(currentNode); }
+	 * return graph; }
+	 * 
+	 * private static void CalculateMinimumDistance(Node evaluationNode, Integer
+	 * edgeWeigh, Node sourceNode) { Integer sourceDistance =
+	 * sourceNode.getDistance(); if (sourceDistance + edgeWeigh <
+	 * evaluationNode.getDistance()) { evaluationNode.setDistance(sourceDistance
+	 * + edgeWeigh); LinkedList<Node> shortestPath = new
+	 * LinkedList<>(sourceNode.getShortestPath()); shortestPath.add(sourceNode);
+	 * evaluationNode.setShortestPath(shortestPath); } }
+	 * 
+	 * private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
+	 * Node lowestDistanceNode = null; int lowestDistance = Integer.MAX_VALUE;
+	 * for (Node node : unsettledNodes) { int nodeDistance = node.getDistance();
+	 * if (nodeDistance < lowestDistance) { lowestDistance = nodeDistance;
+	 * lowestDistanceNode = node; } } return lowestDistanceNode; }
+	 */
+
 	public static Graph calculateShortestPathFromSource(Graph graph, Node source) {
 
 		source.setDistance(0);
@@ -167,8 +203,35 @@ public class DjkstraShortestPath {
 		List<Node> shortestPathForNodeF = Arrays.asList(nodeA, nodeB, nodeD);
 
 		for (Node node : graph.getNodes()) {
-			System.out.println("Node: " + node.name + " Ln: " + node.distance);
-		}
+			switch (node.getName()) {
+			case "B": {
+				for (Node a : node.getShortestPath()) {
+					System.out.println("From A-B nodes names: " + a.getName() + "values : " + a.getDistance());
+				}
 
+				break;
+			}
+			case "C":
+				for (Node a : node.getShortestPath()) {
+					System.out.println("FROM A-C nodes names: " + a.getName() + "values : " + a.getDistance());
+				}
+				break;
+			case "D":
+				for (Node a : node.getShortestPath()) {
+					System.out.println("FROM A-D nodes names: " + a.getName() + "values : " + a.getDistance());
+				}
+				break;
+			case "E":
+				for (Node a : node.getShortestPath()) {
+					System.out.println("FROM A-E nodes names: " + a.getName() + "values : " + a.getDistance());
+				}
+				break;
+			case "F":
+				for (Node a : node.getShortestPath()) {
+					System.out.println("FROM A-F nodes names: " + a.getName() + "values : " + a.getDistance());
+				}
+				break;
+			}
+		}
 	}
 }
