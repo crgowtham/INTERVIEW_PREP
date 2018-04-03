@@ -1,6 +1,10 @@
 package com.gowtham;
 
 public class LeetCodeValidNumber {
+	
+	//Validate if a given string is numeric.
+	
+	
 	public boolean isNumber(String s) {
 		int i = 0, n = s.length();
 		while (i < n && Character.isWhitespace(s.charAt(i)))
