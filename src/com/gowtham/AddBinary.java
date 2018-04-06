@@ -12,6 +12,7 @@ public class AddBinary {
 	public static void main(String[] args) {
 		System.out.println("addbinary: " + addBinary("1", "11"));
 	}
+	
 
 	public static String addBinary(String a, String b) {
 
