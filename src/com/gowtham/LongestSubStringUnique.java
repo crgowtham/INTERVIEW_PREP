@@ -25,8 +25,8 @@ public class LongestSubStringUnique {
 		return maxStr;
 	}
 	
-	public static void main(String[][] args) {
-		System.out.println("longestSubstring: " + getLongestNonRepeatingString("abcdebefghh"));
+	public static void main(String[] args) {
+		System.out.println("longestSubstring: " + getLongestNonRepeatingString("abcdebefghi"));
 	}
 
 }
