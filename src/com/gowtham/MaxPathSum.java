@@ -58,7 +58,7 @@ public class MaxPathSum {
 		int left = Math.max(maxPathSumRecursive(node.left), 0);
 		int right = Math.max(maxPathSumRecursive(node.right), 0);
 
-		max = Math.max(max, node.data + left + right);
+		//max = Math.max(max, node.data + left + right);
 
 		return node.data + Math.max(left, right);
 
