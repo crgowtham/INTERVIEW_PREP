@@ -31,6 +31,21 @@ public class LLReverse {
 
 	}
 	
+	public ListNode reverseRecList(ListNode head) {
+	    if(head==null || head.next == null)
+	        return head;
+	 
+	    //get second node    
+	    ListNode second = head.next;
+	    //set first's next to be null
+	    head.next = null;
+	 
+	    ListNode rest = reverseRecList(second);
+	    second.next = head;
+	 
+	    return rest;
+	}
+	
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);

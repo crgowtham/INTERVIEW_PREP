@@ -26,8 +26,14 @@ package com.gowtham;
 // What limitation we need to add to the question to allow negative numbers?
 
 public class CombinationSum {
+	
+	public static void main(String[] args) {
+		int[] nums = {1, 2, 3};
+		int target = 4;
+		System.out.println("CSum: " + combinationSum4(nums, target));
+	}
 
-	public int combinationSum4(int[] nums, int target) {
+	public static int combinationSum4(int[] nums, int target) {
 
 		int[] dp = new int[target + 1];
 		dp[0] = 1;
