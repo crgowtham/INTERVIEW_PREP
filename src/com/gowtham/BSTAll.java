@@ -1,5 +1,7 @@
 package com.gowtham;
 
+import java.util.Stack;
+
 public class BSTAll {
 
 	public static Node root;
@@ -100,7 +102,7 @@ public class BSTAll {
 		System.out.println("hasPathSum: " + hasPathSum(root, 6));
 
 		System.out.println("sameTree: " + sameTree(root, root1));
-		
+
 		System.out.println("isBst: " + isBST(root));
 	}
 
@@ -196,5 +198,105 @@ public class BSTAll {
 		if (node.right != null && minvalue(node.right) <= node.data)
 			return false;
 		return (isBST(node.left) && isBST(node.right));
+	}
+
+	void inorder() {
+		if (root == null) {
+			return;
+		}
+
+		// keep the nodes in the path that are waiting to be visited
+		Stack<Node> stack = new Stack<Node>();
+		Node node = root;
+
+		// first node to be visited will be the left one
+		while (node != null) {
+			stack.push(node);
+			node = node.left;
+		}
+
+		// traverse the tree
+		while (stack.size() > 0) {
+
+			// visit the top node
+			node = stack.pop();
+			System.out.print(node.data + " ");
+			if (node.right != null) {
+				node = node.right;
+
+				// the next node to be visited is the leftmost
+				while (node != null) {
+					stack.push(node);
+					node = node.left;
+				}
+			}
+		}
+	}
+
+	// An iterative process to print preorder traversal of Binary tree
+	void iterativePreorder(Node node) {
+
+		// Base Case
+		if (node == null) {
+			return;
+		}
+
+		// Create an empty stack and push root to it
+		Stack<Node> nodeStack = new Stack<Node>();
+		nodeStack.push(root);
+
+		/*
+		 * Pop all items one by one. Do following for every popped item a) print
+		 * it b) push its right child c) push its left child Note that right
+		 * child is pushed first so that left is processed first
+		 */
+		while (nodeStack.empty() == false) {
+
+			// Pop the top item from stack and print it
+			Node mynode = nodeStack.peek();
+			System.out.print(mynode.data + " ");
+			nodeStack.pop();
+
+			// Push right and left children of the popped node to stack
+			if (mynode.right != null) {
+				nodeStack.push(mynode.right);
+			}
+			if (mynode.left != null) {
+				nodeStack.push(mynode.left);
+			}
+		}
+	}
+
+	static void postOrderIterative(Node root) {
+		Stack<Node> s1, s2;
+		// Create two stacks
+		s1 = new Stack<>();
+		s2 = new Stack<>();
+
+		if (root == null)
+			return;
+
+		// push root to first stack
+		s1.push(root);
+
+		// Run while first stack is not empty
+		while (!s1.isEmpty()) {
+			// Pop an item from s1 and push it to s2
+			Node temp = s1.pop();
+			s2.push(temp);
+
+			// Push left and right children of
+			// removed item to s1
+			if (temp.left != null)
+				s1.push(temp.left);
+			if (temp.right != null)
+				s1.push(temp.right);
+		}
+
+		// Print all elements of second stack
+		while (!s2.isEmpty()) {
+			Node temp = s2.pop();
+			System.out.print(temp.data + " ");
+		}
 	}
 }
