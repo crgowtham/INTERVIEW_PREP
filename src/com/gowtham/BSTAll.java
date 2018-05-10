@@ -299,4 +299,14 @@ public class BSTAll {
 			System.out.print(temp.data + " ");
 		}
 	}
+	
+	public static void leftSum(Node root, Node parent) {
+		if (root != null) {
+			leftSum(root.left, root);
+			if (root.left == null && root.right == null && parent.left == root) {
+				leftLeavesSum += root.data;
+			}
+			leftSum(root.right, root);
+		}
+	}
 }
