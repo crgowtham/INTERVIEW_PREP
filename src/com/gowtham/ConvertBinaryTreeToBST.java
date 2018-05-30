@@ -2,7 +2,9 @@ package com.gowtham;
 
 import java.util.*;
 
-public class ConvertBinaryTreeToBST {/*
+public class ConvertBinaryTreeToBST {
+	
+	/*
 										 * A program to convert Binary Tree to
 										 * Binary Search Tree
 										 */

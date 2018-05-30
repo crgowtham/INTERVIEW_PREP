@@ -1,21 +1,33 @@
 package com.gowtham;
 
+import java.util.List;
+
 public class CompareBST {
+
+	static class NodeBST {
+		int data;
+		Node left;
+		Node right;
+
+		public NodeBST(int data) {
+			this.data = data;
+		}
+	}
 
 	// function to insert elements of the
 	// tree to map m
-	void storeInorder(Node* root, vector<int> &v)
+	void storeInorder(NodeBST root, List<Integer> v)
 	{
-	    if (!root)
+	    if (root == null)
 	        return;
-	    storeInorder(root->left, v);
-	    v.push_back(root->data);
-	    storeInorder(root->right, v);
+	    storeInorder(root.left, v);
+	    v.add(root.data);
+	    storeInorder(root.right, v);
 	}
 
 	// function to check if the two BSTs contain
 	// same set of elements
-	bool checkBSTs(Node* root1, Node* root2)
+	bool checkBSTs(NodeBST root1, NodeBST root2)
 	{ 
 	    // Base cases 
 	    if (!root1 && !root2) 
@@ -34,5 +46,5 @@ public class CompareBST {
 	    // identical
 	    return (v1 == v2);
 	}
-
+	
 }

@@ -1,5 +1,9 @@
 package com.gowtham;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
 
 //Example:
@@ -26,9 +30,9 @@ package com.gowtham;
 // What limitation we need to add to the question to allow negative numbers?
 
 public class CombinationSum {
-	
+
 	public static void main(String[] args) {
-		int[] nums = {1, 2, 3};
+		int[] nums = { 1, 2, 3 };
 		int target = 4;
 		System.out.println("CSum: " + combinationSum4(nums, target));
 	}
@@ -52,6 +56,32 @@ public class CombinationSum {
 		}
 
 		return dp[target];
+
+	}
+
+	public List<List<Integer>> combinationSum(int[] candidates, int target) {
+		Arrays.sort(candidates);
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> arr = new ArrayList<Integer>();
+		findCombination(candidates, 0, target, result, arr);
+		return result;
+	}
+
+	public void findCombination(int[] candidates, int index, int target, List<List<Integer>> result,
+			List<Integer> arr) {
+		if (target < 0) {
+			return;
+		}
+		if (target == 0) {
+			result.add(arr);
+			return;
+		}
+		while (index < candidates.length) {
+			List<Integer> newArr = new ArrayList<Integer>(arr);
+			newArr.add(candidates[index]);
+			findCombination(candidates, index, target - candidates[index], result, newArr);
+			index++;
+		}
 
 	}
 
