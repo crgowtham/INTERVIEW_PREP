@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeFindMinRotArray {
+public class FindMinRotArray {
 
 	public int findMin(int[] A) {
 		int L = 0, R = A.length - 1;

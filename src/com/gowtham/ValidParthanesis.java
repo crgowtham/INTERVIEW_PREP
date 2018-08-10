@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeValidParthanesis {
+public class ValidParthanesis {
 
 	private static final Map<Character, Character> map = new HashMap<Character, Character>() {
 		{

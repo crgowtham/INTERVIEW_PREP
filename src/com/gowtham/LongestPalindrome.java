@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodelongestPalindrome {
+public class LongestPalindrome {
 
 	public String longestPalindrome(String s) {
 		int start = 0, end = 0;

@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeATOI {
+public class ATOI {
 
 	private static final int maxDiv10 = Integer.MAX_VALUE / 10;
 

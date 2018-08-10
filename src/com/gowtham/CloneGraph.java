@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeCloneGraph {
+public class CloneGraph {
 
 	public UndirectedGraphNode cloneGraph(UndirectedGraphNode graph) {
 		if (graph == null)

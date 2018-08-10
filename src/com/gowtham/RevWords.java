@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeRevWords {
+public class RevWords {
 	public String reverseWords(String s) {
 		StringBuilder reversed = new StringBuilder();
 		int j = s.length();

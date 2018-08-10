@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMergeSortedLL {
+public class MergeSortedLLLeet {
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		ListNode dummyHead = new ListNode(0);

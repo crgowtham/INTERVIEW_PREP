@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMergeKSortedLL {
+public class MergeKSortedLL {
 
 	private static final Comparator<ListNode> listComparator = new Comparator<ListNode>() {
 		@Override

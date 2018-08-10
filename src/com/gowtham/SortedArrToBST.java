@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeSortedArrToBST {
+public class SortedArrToBST {
 
 	public TreeNode sortedArrayToBST(int[] num) {
 		return sortedArrayToBST(num, 0, num.length - 1);

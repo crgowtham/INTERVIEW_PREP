@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeValidNumber {
+public class ValidNumber {
 	
 	//Validate if a given string is numeric.
 	

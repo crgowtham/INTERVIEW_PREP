@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeRevWordsInPlace {
+public class RevWordsInPlace {
 	public void reverseWords(char[] s) {
 		reverse(s, 0, s.length);
 		for (int i = 0, j = 0; j <= s.length; j++) {

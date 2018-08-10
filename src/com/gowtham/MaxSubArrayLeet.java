@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMaxSubArray {
+public class MaxSubArrayLeet {
 
 	public int maxSubArray(int[] A) {
 		int maxEndingHere = A[0], maxSoFar = A[0];

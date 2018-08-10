@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeBTUpsideDown {
+public class BTUpsideDown {
 
 	public TreeNode UpsideDownBinaryTree(TreeNode root) {
 		return dfsBottomUp(root, null);

@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMinStack {
+public class MinStackLeet {
 
 	class MinStack {
 		private Stack<Integer> stack = new Stack<>();

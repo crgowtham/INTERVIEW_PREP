@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMaxSubProduct {
+public class MaxSubProduct {
 
 	public int maxProduct(int[] A) {
 		assert A.length > 0;

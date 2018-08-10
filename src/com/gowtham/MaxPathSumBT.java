@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeMaxPathSumBT {
+public class MaxPathSumBT {
 
 	private int maxSum;
 

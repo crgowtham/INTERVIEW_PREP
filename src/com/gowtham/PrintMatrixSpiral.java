@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class leetCodePrintMatrixSpiral {
+public class PrintMatrixSpiral {
 	public List<Integer> spiralOrder(int[][] matrix) {
 		List<Integer> elements = new ArrayList<>();
 		if (matrix.length == 0)

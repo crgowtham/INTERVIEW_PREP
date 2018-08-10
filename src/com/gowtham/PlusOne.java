@@ -2,7 +2,7 @@ package com.gowtham;
 
 import java.util.List;
 
-public class LeetCodePlusOne {
+public class PlusOne {
 
 	public void plusOne(List<Integer> digits) {
 		for (int i = digits.size() - 1; i >= 0; i--) {

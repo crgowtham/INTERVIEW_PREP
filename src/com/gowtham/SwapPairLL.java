@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeSwapPairLL {
+public class SwapPairLL {
 
 	public ListNode swapPairs(ListNode head) {
 		ListNode dummy = new ListNode(0);
