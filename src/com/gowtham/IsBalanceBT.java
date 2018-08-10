@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeIsBalanceBT {
+public class IsBalanceBT {
 
 	public boolean isBalanced(TreeNode root) {
 		return maxDepth(root) != -1;

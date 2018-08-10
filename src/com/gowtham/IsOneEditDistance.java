@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeisOneEditDistance {
+public class IsOneEditDistance {
 
 	public boolean isOneEditDistance(String s, String t) {
 		int m = s.length(), n = t.length();

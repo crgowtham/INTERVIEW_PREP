@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodelengthOfLongestSubstring {
+public class LengthOfLongestSubstring {
 	
 //	/Given a string, find the length of the longest substring without repeating characters. For
 //	example, the longest substring without repeating letters for “abcabcbb” is “abc”, which

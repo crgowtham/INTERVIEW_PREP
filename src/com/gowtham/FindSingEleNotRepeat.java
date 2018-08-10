@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeFindSingEleNotRepeat {
+public class FindSingEleNotRepeat {
 	public int singleNumber(int[] A) {
 		int num = 0;
 		for (int x : A) {

@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeIsValidBST {
+public class IsValidBST {
 
 	public boolean isValidBST(TreeNode root) {
 		return valid(root, null, null);

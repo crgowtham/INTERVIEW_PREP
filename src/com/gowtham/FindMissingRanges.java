@@ -3,7 +3,7 @@ package com.gowtham;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeetCodefindMissingRanges {
+public class FindMissingRanges {
 	
 	//Given a sorted integer array where the range of elements are [0, 99] inclusive, return its
 		//	missing ranges.

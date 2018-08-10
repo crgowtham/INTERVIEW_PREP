@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodelengthOfLongestSubstringTwoDistinct {
+public class LengthOfLongestSubstringTwoDistinct {
 	
 	//Given a string S, find the length of the longest substring T that contains at most two distinct characters.
 	//For example,

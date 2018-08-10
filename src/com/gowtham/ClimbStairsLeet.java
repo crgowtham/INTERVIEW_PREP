@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeClimbStairs {
+public class ClimbStairsLeet {
 
 	public int climbStairs(int n) {
 		int p = 1, q = 1;

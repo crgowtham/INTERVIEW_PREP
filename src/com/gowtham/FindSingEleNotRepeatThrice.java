@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class LeetCodeFindSingEleNotRepeatThrice {
+public class FindSingEleNotRepeatThrice {
 
 	int singleNumber(int A[], int n) {
 		int ones = 0, twos = 0, threes = 0;
