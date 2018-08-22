@@ -2,6 +2,27 @@ package com.gowtham;
 
 public class LLReverseInGrps {
 
+	public ListNode reverseKGroup(ListNode head, int k) {
+		int cnt = 0;
+		for (ListNode curr = head; curr != null; curr = curr.next)
+			++cnt;
+		return reverseKGroup(head, k, cnt);
+	}
+
+	public ListNode reverseKGroup(ListNode head, int k, int cnt) {
+		if (cnt < k)
+			return head;
+		ListNode curr = head, tmp = null, ans = null;
+		for (int i = 0; i < k; ++i) {
+			tmp = curr;
+			curr = curr.next;
+			tmp.next = ans;
+			ans = tmp;
+		}
+		head.next = reverseKGroup(curr, k, cnt - k);
+		return ans;
+	}
+
 	public Node reveseGrps(Node head, int k) {
 		int x = k;
 		Node head_next = null;
