@@ -36,7 +36,7 @@ public class EditDistanceProblem {
 	}
 
 	public static void main(String[] args) {
-		String s1 = "horizon";
+		String s1 = "horizontae";
 		String s2 = "horizontal";
 		EditDistanceProblem ed = new EditDistanceProblem();
 		System.out.println("Minimum Edit Distance -(DP): " + ed.editDistanceDP(s1, s2));
