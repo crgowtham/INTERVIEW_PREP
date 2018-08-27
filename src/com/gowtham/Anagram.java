@@ -55,4 +55,46 @@ public class Anagram {
 		return new ArrayList<List<String>>(map.values());
 
 	}
+	
+	public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+        if(strs == null || strs.length == 0) return res;
+        
+        Map<Integer, ArrayList<String>> map = new HashMap<>();
+        
+        for(int i = 0; i < strs.length; i++) {
+            Integer mkey = convertint(strs[i]);
+            if(!map.containsKey(mkey)) {
+                map.put(mkey, new ArrayList<>());
+            } 
+            map.get(mkey).add(strs[i]);
+        }
+        return new ArrayList<>(map.values());
+    }
+    
+    private Integer convertint(String s) {
+        char[] sarr = s.toCharArray();
+        int[] count = new int[26];
+        for(char c : sarr) {
+            int num = c - 'a';
+            count[num]++;
+        }
+        
+        return Arrays.hashCode(count);
+    }
+    
+    private String convert(String s) {
+        char[] sarr = s.toCharArray();
+        int[] count = new int[26];
+        for(char c : sarr) {
+            int num = c - 'a';
+            count[num]++;
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        for(int i : count) {
+            sb.append('#').append(i);
+        }
+        return sb.toString();
+    }
 }
