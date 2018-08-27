@@ -1,6 +1,8 @@
 package com.gowtham;
 
 public class RemoveDuplicatesInArray {
+
+
 	public int removeDuplicates(int[] nums) {
 		int length = 0;
 		for (int i = 0; i < nums.length; i++) {
@@ -14,9 +16,9 @@ public class RemoveDuplicatesInArray {
 	}
 
 	public int removeElement(int[] nums, int val) {
-        int i = 0;
-        for(int num : nums)
-            nums[i++] = (num != val)? num : i--;
-        return i;
-    }
+		int i = 0;
+		for (int num : nums)
+			nums[i++] = (num != val) ? num : i--;
+		return i;
+	}
 }

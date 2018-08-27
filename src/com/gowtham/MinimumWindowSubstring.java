@@ -15,78 +15,28 @@ import java.util.HashMap;
 //If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
 
 public class MinimumWindowSubstring {
-
 	public String minWindow(String s, String t) {
+		int[] arr = new int[128];
 
-		HashMap<Character, Integer> map = new HashMap<>();
+		for (char c : t.toCharArray())
+			arr[c]++;
 
-		for (char c : s.toCharArray()) {
-
-			map.put(c, 0);
-
-		}
-
-		for (char c : t.toCharArray()) {
-
-			if (map.containsKey(c)) {
-
-				map.put(c, map.get(c) + 1);
-
-			}
-
-			else {
-
-				return "";
-
-			}
-
-		}
-
-		int start = 0;
-		int end = 0;
-		int minStart = 0;
-		int minLength = Integer.MAX_VALUE;
-		int counter = t.length();
+		int count = t.length(), begin = 0, end = 0, d = Integer.MAX_VALUE, head = 0;
 
 		while (end < s.length()) {
-
-			char c1 = s.charAt(end);
-
-			if (map.get(c1) > 0) {
-
-				counter--;
-
-			}
-
-			map.put(c1, map.get(c1) - 1);
-			end++;
-
-			while (counter == 0) {
-
-				if (minLength > end - start) {
-
-					minLength = end - start;
-					minStart = start;
-
+			if (arr[s.charAt(end++)]-- > 0)
+				count--;
+			while (count == 0) {
+				if (end - begin < d) {
+					d = end - begin;
+					head = begin;
 				}
-
-				char c2 = s.charAt(start);
-				map.put(c2, map.get(c2) + 1);
-
-				if (map.get(c2) > 0) {
-
-					counter++;
-
-				}
-
-				start++;
-
+				if (arr[s.charAt(begin++)]++ == 0)
+					count++;
 			}
-
 		}
 
-		return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLength);
+		return d == Integer.MAX_VALUE ? "" : s.substring(head, head + d);
 
 	}
-
 }
