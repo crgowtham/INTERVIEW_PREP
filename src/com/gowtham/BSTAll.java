@@ -116,6 +116,15 @@ public class BSTAll {
 		}
 	}
 
+	public int minDepth(Node root) {
+		if (root == null)
+			return 0;
+		int left = minDepth(root.left);
+		int right = minDepth(root.right);
+		return (left == 0 || right == 0) ? left + right + 1 : Math.min(left, right) + 1;
+
+	}
+
 	private static int minvalue(Node node) {
 		Node cur = node;
 		while (cur.left != null) {
@@ -299,7 +308,7 @@ public class BSTAll {
 			System.out.print(temp.data + " ");
 		}
 	}
-	
+
 	public static void leftSum(Node root, Node parent) {
 		if (root != null) {
 			leftSum(root.left, root);
@@ -308,5 +317,61 @@ public class BSTAll {
 			}
 			leftSum(root.right, root);
 		}
+	}
+
+	public List<Integer> inorderTraversal(TreeNode root) {
+		List<Integer> list = new ArrayList<Integer>();
+
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode cur = root;
+
+		while (cur != null || !stack.empty()) {
+			while (cur != null) {
+				stack.add(cur);
+				cur = cur.left;
+			}
+			cur = stack.pop();
+			list.add(cur.val);
+			cur = cur.right;
+		}
+
+		return list;
+	}
+
+	public boolean isValidBST(TreeNode root) {
+		long min = Long.MIN_VALUE;
+		long max = Long.MAX_VALUE;
+		return isValidBSTUtil(root, min, max);
+	}
+
+	public boolean isValidBSTUtil(TreeNode root, long min, long max) {
+		if (root == null)
+			return true;
+		return (root.val > min && root.val < max && isValidBSTUtil(root.left, min, root.val)
+				&& isValidBSTUtil(root.right, root.val, max));
+	}
+
+	/*
+	 * Given a binary tree, check whether it is a mirror of itself (ie,
+	 * symmetric around its center).
+	 * 
+	 * For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
+	 * 
+	 * 1 / \ 2 2 / \ / \ 3 4 4 3 But the following [1,2,2,null,3,null,3] is not:
+	 * 1 / \ 2 2 \ \ 3 3
+	 */
+
+	public boolean isSymmetric(TreeNode root) {
+		if (root == null)
+			return true;
+		return isMirror(root.left, root.right);
+	}
+
+	public boolean isMirror(TreeNode p, TreeNode q) {
+		if (p == null && q == null)
+			return true;
+		if (p == null || q == null)
+			return false;
+		return (p.val == q.val) && isMirror(p.left, q.right) && isMirror(p.right, q.left);
 	}
 }
