@@ -338,6 +338,39 @@ public class BSTAll {
 		return list;
 	}
 
+	public List<Integer> preorderTraversal(TreeNode node) {
+		List<Integer> list = new LinkedList<Integer>();
+		Stack<TreeNode> rights = new Stack<TreeNode>();
+		while (node != null) {
+			list.add(node.val);
+			if (node.right != null) {
+				rights.push(node.right);
+			}
+			node = node.left;
+			if (node == null && !rights.isEmpty()) {
+				node = rights.pop();
+			}
+		}
+		return list;
+	}
+
+	public List<Integer> postorderTraversal(TreeNode root) {
+		LinkedList<Integer> result = new LinkedList<>();
+		Deque<TreeNode> stack = new ArrayDeque<>();
+		TreeNode p = root;
+		while (!stack.isEmpty() || p != null) {
+			if (p != null) {
+				stack.push(p);
+				result.addFirst(p.val); // Reverse the process of preorder
+				p = p.right; // Reverse the process of preorder
+			} else {
+				TreeNode node = stack.pop();
+				p = node.left; // Reverse the process of preorder
+			}
+		}
+		return result;
+	}
+
 	public boolean isValidBST(TreeNode root) {
 		long min = Long.MIN_VALUE;
 		long max = Long.MAX_VALUE;
