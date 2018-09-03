@@ -1,6 +1,6 @@
 package com.gowtham;
 
-public class TrieAddSearch {
+public class TrieAddSearchWord {
 
 	public static void main(String[] args) {
 		addWord("bad");
