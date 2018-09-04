@@ -7,30 +7,20 @@ Output : Length of LIS = 3
 The longest increasing subsequence is 3, 10, 20
  */
 class LongestIncreasingSubSeq {
-	/*
-	 * lis() returns the length of the longest increasing subsequence in arr[]
-	 * of size n
-	 */
-	static int lis(int arr[], int n) {
-		int lis[] = new int[n];
-		int i, j, max = 0;
+	public int lengthOfLIS(int[] nums) {
+		int[] dp = new int[nums.length];
+		int len = 0;
 
-		/* Initialize LIS values for all indexes */
-		for (i = 0; i < n; i++)
-			lis[i] = 1;
+		for (int x : nums) {
+			int i = Arrays.binarySearch(dp, 0, len, x);
+			if (i < 0)
+				i = -(i + 1);
+			dp[i] = x;
+			if (i == len)
+				len++;
+		}
 
-		/* Compute optimized LIS values in bottom up manner */
-		for (i = 1; i < n; i++)
-			for (j = 0; j < i; j++)
-				if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
-					lis[i] = lis[j] + 1;
-
-		/* Pick maximum of all LIS values */
-		for (i = 0; i < n; i++)
-			if (max < lis[i])
-				max = lis[i];
-
-		return max;
+		return len;
 	}
 
 	public static void main(String args[]) {
