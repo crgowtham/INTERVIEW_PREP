@@ -407,4 +407,20 @@ public class BSTAll {
 			return false;
 		return (p.val == q.val) && isMirror(p.left, q.right) && isMirror(p.right, q.left);
 	}
+
+	public boolean isPowerOfThree(int n) {
+		if (n > 1)
+			while (n % 3 == 0)
+				n /= 3;
+		return n == 1;
+	}
+
+	public boolean isPerfectSquare(int num) {
+		int i = 1;
+		while (num > 0) {
+			num -= i;
+			i += 2;
+		}
+		return num == 0;
+	}
 }
